@@ -6,35 +6,25 @@
 /*   By: alyle <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 12:31:20 by alyle             #+#    #+#             */
-/*   Updated: 2018/03/19 17:46:10 by alyle            ###   ########.fr       */
+/*   Updated: 2018/03/20 20:53:40 by alyle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int		ft_same(char *str, char *to_find, int i)
-{
-	int		j;
-
-	j = 0;
-	while (to_find[j] != '\0')
-	{
-		if (str[i] != to_find[j])
-			return (0);
-		i++;
-		j++;
-	}
-	return (1);
-}
 
 char	*ft_strstr(char *str, char *to_find)
 {
 	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
 	while (str[i] != '\0')
 	{
-		if (ft_same(str, to_find, i))
-			return (str + i);
+		while (to_find[j] != '\0' && to_find[j] == str[i + j])
+			j++;
+		if (to_find[j] == '\0')
+			return (str + i + j);
 		i++;
+		j = 0;
 	}
 	return (0);
 }
