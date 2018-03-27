@@ -19,13 +19,6 @@ int		ft_isspace(char c)
 	return (0);
 }
 
-int		ft_isnumber(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
 int		ft_atoi(char *str)
 {
 	int		i;
@@ -43,7 +36,7 @@ int		ft_atoi(char *str)
 			sign = -1;
 		i++;
 	}
-	while (ft_isnumber(str[i]) && str[i] != '\0')
+	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
 	{
 		value = (value * 10 + (str[i] - '0'));
 		i++;
