@@ -6,7 +6,7 @@
 /*   By: alyle <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 15:42:34 by alyle             #+#    #+#             */
-/*   Updated: 2018/03/21 18:11:30 by alyle            ###   ########.fr       */
+/*   Updated: 2018/03/26 20:51:48 by alyle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	**ft_split_whitespaces(char *str)
 	int		strlen;
 
 	strlen = ft_strlen(str);
-	strarray = malloc(strlen * sizeof(char*));
+	strarray = malloc(sizeof(char*) * ((strlen / 2) + 2));
 	word = 0;
 	j = 0;
 	while (str[j])
