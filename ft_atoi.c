@@ -6,7 +6,7 @@
 /*   By: alyle <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/18 21:44:59 by alyle             #+#    #+#             */
-/*   Updated: 2018/03/18 22:43:04 by alyle            ###   ########.fr       */
+/*   Updated: 2018/04/03 17:13:15 by alyle            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_atoi(char *str)
 	i = 0;
 	sign = 1;
 	value = 0;
-	while (ft_isspace(str[i]) && str[i] != '\0')
+	while (ft_isspace(str[i]) && str[i])
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
@@ -36,7 +36,7 @@ int		ft_atoi(char *str)
 			sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
+	while (str[i] >= '0' && str[i] <= '9' && str[i])
 	{
 		value = (value * 10 + (str[i] - '0'));
 		i++;
